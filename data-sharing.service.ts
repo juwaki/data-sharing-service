@@ -19,7 +19,7 @@ export class DataSharingService {
 
   constructor() { }
 
-
+//parent component
   inboxData(status: boolean) {
     this.inbox.next(status)
   }
@@ -36,5 +36,13 @@ export class DataSharingService {
   
 
 
-  
+  //in your receiving component 2 
+    this.test.inboxMessage.subscribe((res: any) =>{
+      if(res.length !== 0){
+              console.log(res)
+
+      }
+      this.loader = false;
+    })
+    
 }
